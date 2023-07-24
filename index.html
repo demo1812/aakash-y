@@ -1,0 +1,43 @@
+<html>
+	<head>
+	    <link rel="stylesheet" href="mystyle1.css">	
+	  
+  </head>
+  <body> 
+  <div class="login-box">
+
+    <h3>Login</h3>
+
+    <form onsubmit="validateAndRedirect(event)">
+      <p>Username</p>
+      <input type="text" name="username" id="usernameInput" placeholder="Enter your username...">
+      <p>Password</p>
+      <input type="password" name="password" id="passwordInput" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+   </div>
+  
+
+   <script>
+    function validateAndRedirect(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the values from the "username" and "password" input fields
+        var username = document.getElementById("usernameInput").value;
+        var password = document.getElementById("passwordInput").value;
+
+        // Check if the username and password match the specific criteria you want to validate
+        var validUsername = "komal"; // Change this to the valid username you want to check against
+        var validPassword = "komal@123"; // Change this to the valid password you want to check against
+
+        if (username === validUsername && password === validPassword) {
+            window.location.href = "files/view.html"; // Redirect to the welcome page
+        } else {
+            window.location.href = "files/error.html"; // Redirect to the login error page
+        }
+    }
+</script>
+
+
+</body>
+</html>
